@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='container'>
+<div class="card">
+<div style="text-align:center">
+    <h1>
+      voice-record!
+    </h1>
+
+    <a (click)="initiateRecording()" class="btn btn-primary start" *ngIf="!recording"> Start Recording <i class="fas fa-microphone-alt"></i> </a>
+      <a (click)="stopRecording()" class="btn btn-danger stop" *ngIf="recording"> Stop Recording {{ count }} </a>
+      <div class="clearfix"></div>
+      <br/>
+      <audio controls="" *ngIf="url">
+          <source [src]="sanitize(url)">
+      </audio>
+      <div class="blink" *ngIf="url">
+      <button type="button" (click)="reload()" class="btn btn-warning">Try again</button>
+      <button type="button" (click)="upload()" class="btn btn-secondary">Upload</button>
+      </div>
+
+  </div>
+  </div>
+  </div>
